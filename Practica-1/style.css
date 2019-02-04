@@ -1,0 +1,48 @@
+body {
+  background-image:url('fly.jpg');
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+img {
+  float:center;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+a:link {
+  color: SlateGrey;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: plum;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: SlateBlue;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: PeachPuff;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+h1 {
+  color: gray;
+  text-align: center;
+  font-family: optima, sans-serif;
+  font-size: 20px;
+}
+
+p {
+  text-align: center;
+  font-family: courier;
+  font-size: 13px;
+}
