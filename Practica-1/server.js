@@ -3,11 +3,16 @@ var http = require('http');
 
 console.log("Arrancando servidor...")
 
-
+//req, res: PETICIÓN, RESPUESTA:
 http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end('Hello World!');
-  console.log("Peticion atendida")
+  console.log("--> Petición RECIBIDA!");
+
+  console.log("Recurso solicitado(URL): " + req.url);
+  // Imprimir en la misma URL:
+  //res.end(req.url);
+  console.log();
+  console.log("--> Peticion ATENDIDA!");
+
 }).listen(8080);
 
 // NAVEGADOR LOCAL: http://localhost:8080/
