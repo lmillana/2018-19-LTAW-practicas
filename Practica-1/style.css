@@ -9,6 +9,46 @@ div{
   text-align: center;
 }
 
+.header {
+  padding: 20px;
+  text-align: center;
+}
+
+.menu {
+  overflow: hidden;
+  background-color: lightgrey;
+  font-family: courier;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the topnav links */
+.menu a {
+  float: center;
+  color: #f2f2f2;
+  margin: 100px;
+  padding: 14px 16px;
+}
+
+/* Change color on hover */
+.menu a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.column {
+  float: left;
+  width: 30%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 img {
   float:center;
 }
@@ -20,6 +60,23 @@ img {
   height:300px;
   float:right;
 }
+
+#london{
+  margin-top: 70px;
+  margin-right: 70px;
+  width:200px;
+  height:300px;
+  float:right;
+}
+
+#pisa{
+  margin-top: 70px;
+  margin-right: 70px;
+  width:200px;
+  height:300px;
+  float:right;
+}
+
 
 a:link {
   color: SlateGrey;
@@ -52,6 +109,12 @@ h1 {
   font-size: 20px;
 }
 
+h2{
+  text-align: center;
+  font-family: courier;
+  font-size: 13px;
+}
+
 h3 {
   color: powderblue;
   text-align: center;
@@ -62,7 +125,7 @@ h3 {
 
 h6{
   text-align: left;
-  margin-left: 40px;
+  margin-left: 100px;
   font-family: optima, sans-serif;
 }
 
@@ -72,11 +135,26 @@ p {
   font-size: 13px;
 }
 
+.end {
+  padding: 10px;
+  text-align: center;
+}
+
 #intro{
   color: gray;
 }
 
 #guiaparis{
   text-align: left;
-  margin-left: 40px;
+  margin-left: 100px;
+}
+
+#guialondon{
+  text-align: left;
+  margin-left: 100px;
+}
+
+#guiapisa{
+  text-align: left;
+  margin-left: 100px;
 }
