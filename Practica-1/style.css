@@ -64,9 +64,18 @@ img {
 #london{
   margin-top: 70px;
   margin-right: 70px;
+  margin-bottom: 40px;
   width:200px;
   height:300px;
   float:right;
+}
+
+#london2{
+  margin-top: 70px;
+  margin-right: 70px;
+  margin-bottom: 10px;
+  width:350px;
+  height:300px;
 }
 
 #pisa{
