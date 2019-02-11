@@ -18,16 +18,15 @@ http.createServer(function (req, res) {
     console.log();
 
     if (err){
-      res.end("404 NOT FOUND");
+      res.end(" 404   NOT FOUND");
     } else {
       res.write(data);
       res.end();
-      console.log("--> Peticion ATENDIDA!");
     }
   });
 }).listen(8080);
 
-// NAVEGADOR LOCAL: http://localhost:8080/xxx
+// NAVEGADOR LOCAL: http://localhost:8080/index.html
 
 // Imprimir en la misma URL:
 //res.end(req.url);
