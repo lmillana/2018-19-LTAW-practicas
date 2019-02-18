@@ -18,8 +18,14 @@ http.createServer(function (req, res) {
     console.log();
 
     if (err){
+      res.writeHead(404, {'Content-Type': 'text/html'});
       res.end(" 404   NOT FOUND");
     } else {
+      // Tipo MIME por defecto:
+      //var mime = "text/html";
+
+      // Mensaje de respuesta:
+      //res.writeHead(200, {'Content-Type': 'mime'});
       res.write(data);
       res.end();
     }
