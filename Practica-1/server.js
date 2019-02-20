@@ -13,6 +13,11 @@ http.createServer(function (req, res) {
 
   var q = url.parse(req.url, true);
   var filename = "." + q.pathname; //filename: ./xxx.// XXX:
+
+  if (q.pathname == "/"){
+    filename += "/index.html";
+  }
+
   fs.readFile(filename, function(err, data){
     console.log("Recurso solicitado(URL): " + filename);
     console.log();
