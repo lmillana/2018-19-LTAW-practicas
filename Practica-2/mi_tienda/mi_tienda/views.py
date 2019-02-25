@@ -2,6 +2,8 @@
 
 from django.http import HttpResponse
 from django.template import Template, Context
+from django.template.loader import get_template
+from django.shortcuts import render
 
 def mi_funcion(request):
     html = "Hola! Mi primera URL!"
@@ -26,6 +28,7 @@ PLANTILLA = """
 </html>
 """
 
+"""
 def saludo(request):
     # -- Procesar la plantilla:
     t = Template(PLANTILLA)
@@ -36,3 +39,21 @@ def saludo(request):
     # -- Obtener página HTLM final:
     html = t.render(c)
     return HttpResponse(html)
+"""
+
+def index(request):
+    """fp = open('/Users/leyremc/github/2018-19-LTAW-practicas/Practica-2/mi_tienda/mi_tienda/main.html')
+    t = Template(fp.read())
+    fp.close()
+    c = Context({'user': ' lmillana'})
+
+    Otra opción de FUNCIONAMIENTO:
+    t = get_template('main.html')
+    c = {'user': ' lmillana'}
+
+    html = t.render(c)
+    return HttpResponse(html) """
+
+
+    """ Mucho más simplificado! """
+    return render (request, 'main.html',{'user': ' lmillana'})
