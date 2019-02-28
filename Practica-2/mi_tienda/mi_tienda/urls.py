@@ -16,16 +16,13 @@ Including another URLconf
 
 from django.conf.urls import url
 from django.contrib import admin
-from mi_tienda.views import mi_funcion
-from mi_tienda.views import mi_producto
-from mi_tienda.views import index
 
 
 """ URLS implementadas: expresion regular (smp empieza por r'/xxx') """
 
 urlpatterns = [
-    url(r'^main/', index),
-    url(r'^hola/', mi_funcion),
-    url(r'^producto/(\d{1,2})/$', mi_producto),
-    url(r'^test/', admin.site.urls),
+    #url(r'^main/', index),
+    #url(r'^hola/', mi_funcion),
+    #url(r'^producto/(\d{1,2})/$', mi_producto),
+    url(r'^admin/', admin.site.urls),
 ]
