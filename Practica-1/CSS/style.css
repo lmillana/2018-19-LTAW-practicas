@@ -4,6 +4,10 @@ body {
   background-size: contain;
 }
 
+audio {
+  float: center;
+}
+
 div{
   float:center;
   text-align: center;
