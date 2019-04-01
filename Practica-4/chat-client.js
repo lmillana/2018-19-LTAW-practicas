@@ -18,13 +18,11 @@ function main(){
   //-- Cuando se aprieta el botón de enviar:
   send.onclick = () => {
     socket.emit('new_message', msg.value);
-
-    //-- Lo notificamos en la consola del navegador:
-    console.log('Mensaje emitido!')
+    msg.value = "";
   }
 
   //-- Cuando se reciba un mensaje del servidor:
   socket.on('new_message', msg => {
-    display.innerHTML = msg;
+    display.innerHTML += msg + '<br>';
   });
 }
