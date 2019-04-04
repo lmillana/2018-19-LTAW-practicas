@@ -7,6 +7,7 @@ body {
 div{
   float:center;
   text-align: center;
+  font-family: courier;
 }
 
 .header {

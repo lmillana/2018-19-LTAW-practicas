@@ -9,6 +9,7 @@ from mi_tienda.models import London
 from mi_tienda.models import Pisa
 from mi_tienda.models import Paris
 
+
 # Create your views here.
 def home_view (request):
     return render(request, "index.html", {})
@@ -21,6 +22,22 @@ def pisa_view (request):
 
 def paris_view (request):
     return render(request, "paris.html", {})
+
+def search_view(request):
+    query = request.GET.get('q', '')
+    if query:
+        qset = (
+            Q(nombre__icontains=query) |
+            Q(precio__icontains=query) |
+            Q(stock__icontains=query)
+        )
+        results = London.objects.filter(qset).distinct()
+    else:
+        results = []
+    return render(requets, {
+        "results": results,
+        "query": query,
+    })
 
 """
 def list(request):

@@ -53,6 +53,31 @@
       </div>
     </div>
 
+    <!-- CAJA de BUSQUEDA -->
+    <!-- NO FUNCIONA! --> 
+    <form action="." method="GET">
+      <p> ¿No encuentras alguna guía? ¡Pregúntanos! </p>
+      <div>
+        <label for="q"> <i> ¿Cómo me llamo? </i> </label>
+        <input type="text" name="q" value="{{ query|escape }}">
+        <input type="submit" value="Search">
+      </div>
+    </form>
+
+    {% if query %}
+      <h2> Los resultados de búsqueda de:  "{{ query|escape }}":</h2>
+
+      {% if results %}
+        <ul>
+        {% for book in results %}
+            <li>{{ book|escape }}</l1>
+        {% endfor %}
+        </ul>
+      {% else %}
+          <p> ¡Lo sentimos! No hemos encontrado ningún libro con ese nombre.</p>
+      {% endif %}
+    {% endif %}
+
     <hr>
     <div class="end">
       <p> Design by Leyre Millana <br>
