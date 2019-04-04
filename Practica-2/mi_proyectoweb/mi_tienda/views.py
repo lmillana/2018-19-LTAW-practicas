@@ -23,7 +23,11 @@ def pisa_view (request):
 def paris_view (request):
     return render(request, "paris.html", {})
 
-def search_view(request):
+def search_view (request):
+    return render(request, "search.html", {})
+
+
+def searching(request):
     query = request.GET.get('q', '')
     if query:
         qset = (

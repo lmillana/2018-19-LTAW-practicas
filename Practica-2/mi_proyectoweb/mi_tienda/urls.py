@@ -11,5 +11,5 @@ urlpatterns = [
     url(r'^london', views.london_view),
     url(r'^pisa', views.pisa_view),
     url(r'^paris', views.paris_view),
-    url(r'^search/$', views.search_view),
+    url(r'^search', views.search_view),
 ]
