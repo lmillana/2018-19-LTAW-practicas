@@ -15,6 +15,14 @@ function main(){
   //-- Caja con el mensaje a enviar:
   var msg = document.getElementById('msg')
 
+  //-- Se envia el mensaje al pulsar INTRO:
+  msg.addEventListener("keyup", function(event){
+    if(event.keyCode === 13){
+      event.preventDefault();
+      document.getElementById('send').click();
+    }
+  })
+
   //-- Cuando se aprieta el botón de enviar:
   send.onclick = () => {
     socket.emit('new_message', msg.value);
