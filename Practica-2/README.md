@@ -2,7 +2,8 @@
 
 En este repo se colocarán los ficheros de la práctica 2 de LTAW.
 
-Implementaciones de la Práctica 2:
+Implementaciones de la Práctica 2
+----------------------------------
 
 La página web contiene al menos 3 productos.
 Contiene una caja de búsqueda.
