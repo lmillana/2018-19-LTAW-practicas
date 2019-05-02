@@ -1,6 +1,8 @@
 function main(){
   console.log("Hola!!!!")
 
+  var user_nick = prompt('Please, enter your name: ');
+
   //-- Crear un socket.io. Se establece la conexión con el servidor:
   var socket = io();
 
@@ -15,6 +17,9 @@ function main(){
   //-- Caja con el mensaje a enviar:
   var msg = document.getElementById('msg')
 
+  //-- Variable que almacena los usuarios conectados:
+  var user = document.getElementById('user')
+
   //-- Se envia el mensaje al pulsar INTRO:
   msg.addEventListener("keyup", function(event){
     if(event.keyCode === 13){
@@ -23,9 +28,11 @@ function main(){
     }
   })
 
+  socket.emit('new_nick', user_nick);
+
   //-- Cuando se aprieta el botón de enviar:
   send.onclick = () => {
-    socket.emit('new_message', msg.value);
+    socket.emit('new_message', user_nick + ": " + msg.value);
     msg.value = "";
   }
 

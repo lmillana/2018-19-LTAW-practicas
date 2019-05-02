@@ -5,6 +5,7 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 var users = 0;
+var nicks = [];
 
 //-- Puerto donde lanzar el servidor:
 const PORT = 3000
@@ -35,18 +36,27 @@ http.listen(PORT, function(){
 io.on('connection', function(socket){
   console.log('new user connected');
   users++;
-  //-- Mensaje de bienvenida:
-  socket.emit('new_message', 'Welcome to the chat');
 
-  //-- Emitir un mensaje a todos los clientes:
-  io.emit('new_message', 'new user connected');
+  socket.on('new_nick', user_nick => {
+    nicks += user_nick + ',' + '\n';
+
+    //-- Mensaje de bienvenida:
+    socket.emit('new_message', 'Welcome to the chat ' + user_nick);
+
+    //-- Emitir un mensaje a todos los clientes:
+    io.emit('new_message', 'new user connected: ' + user_nick);
+  });
+
 
   //-- Detectar si se ha recibido mensaje del cliente:
   socket.on('new_message', msg => {
+
     //-- Emitir un mensaje a todos los clientes:
     io.emit('new_message', msg);
     //-- Notificarlo en la consola del servidor:
     console.log('Mensaje recibido: ' + msg)
+
+    msg = msg.split(" ")[1]
 
     switch(msg){
       case '/help':
@@ -56,20 +66,20 @@ io.on('connection', function(socket){
         break;
 
       case '/list':
-        // REPASAR!!
-        msg = users;
+        //-- Imprime número de usuarios y nicks:
+        msg = 'Connected users: '+ users + '<br>' + nicks;
         socket.emit('new_message', msg);
         break;
 
       case '/hello':
-        msg = "Server message: What's up?";
+        msg = "Server message: What's up?" + '<br>' + '<br>' ;
         socket.emit('new_message', msg);
         break;
 
       case '/date':
         var f = new Date();
         msg = f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear()
-        socket.emit('new_message', 'Today is' + msg);
+        socket.emit('new_message', 'Today is ' + msg);
         break;
 
       default:

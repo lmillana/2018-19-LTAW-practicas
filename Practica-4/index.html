@@ -5,11 +5,10 @@
     <title> MI CHAT</title>
     <script src="/socket.io/socket.io.js"></script>
     <script src="chat-client.js"></script>
-    <!-- <link rel=StyleSheet href="./style.css"> -->
     <link rel=StyleSheet href="/style.css">
   </head>
   <body onload="main();">
-    <h1> <i> CHAT ONLINE con WEBSOCKETS </i> </h1>
+    <h1> <i> chat online con websockets </i> </h1>
     <hr>
 
     <h4> let's Chat! </h4>
@@ -17,12 +16,12 @@
     <input id="msg" autocomplete="off"/>
     <button type="button" id="send">SEND</button>
     <p id="display"></p>
+    <p> To show the connected users: /list <span id="user"> </span> </p>
 
-    <!-- PARA EL FINAL:
     <hr>
     <div class="end">
       <p> Design by Leyre Millana <br>
       Github: <a href="https://github.com/lmillana">github/lmillana</a></p>
-    </div> -->
+    </div>
   </body>
 </html>
