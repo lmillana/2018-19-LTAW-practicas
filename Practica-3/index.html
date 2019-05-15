@@ -4,13 +4,20 @@
     <meta charset="utf-8">
     <link rel=StyleSheet href="/CSS/style.css">
     <meta name="author" content="Leyre Millana">
+    <script src="server-json.js"> </script>
+
     <title> SHOP ONLINE by LEYRE</title>
   </head>
-  <body>
-    <a href="./login.html">
-      <button type="button"> LOGIN </button>
-    </a>
-    <div class="header">
+  <body onload="main();">
+    <div class="menu-top">
+      <a href="./login.html">
+        <img src="/IMGS/login.png" alt="LOGIN" width="30" height="30">
+      </a>
+      <a href="./carrito.html">
+        <img src="/IMGS/buy.png" alt="CARRITO" width="30" height="30">
+      </a>
+    </div>
+
       <h1> <i>SHOP ONLINE </i></h1>
       <hr>
       <h2> Welcome! Bienbenue! Benvenuto! ¡Bienvenido! </h2>
@@ -22,6 +29,8 @@
       <br>
       Para más información, haz click en la imagen deseada. <br>
       ¡Buen viaje!
+      <input type="button" id="ver" value="Ver mis productos"/>
+      <p id="resultado"></p>
       </p>
     </div>
 
