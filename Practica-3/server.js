@@ -20,15 +20,15 @@ http.createServer(function (req, res) {
     filename += "/index.html";
   }
 
-  /*-- Leer las cookies
+  //-- Leer las cookies
   var cookie = req.headers.cookie;
   console.log("Cookie: " + cookie)
 
-  switch (q.pathname) {
+  /*switch (q.pathname) {
 
     //-- Pagina principal
-    case "/login.html":
-      content = "Bienvenido a mi tienda "
+    case "/":
+      //content = "Bienvenido a mi tienda "
 
       //-- No hay ninguna cookie
       if (!cookie) {
@@ -55,7 +55,7 @@ http.createServer(function (req, res) {
     default:
       content = "Error";
       res.statusCode = 404;
-  } */
+  }*/
 
   fs.readFile(filename, function(err, data){
     // Peticion:
